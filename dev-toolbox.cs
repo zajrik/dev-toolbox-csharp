@@ -56,6 +56,7 @@ namespace dev_toolbox
         {
             consoleBox.ScrollToCaret();
             consoleBox.AppendText("\n" + "$ ");
+            consoleBox.Focus();
         }
 
         // Handle command following proper prompt caret ( $ )
