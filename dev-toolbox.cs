@@ -142,12 +142,13 @@ namespace dev_toolbox
         }
 
         // Runs the provided script in the console box, followed by command prompt by default
-        private void consoleRun(String script, Boolean doPrompt = true)
+        private void consoleRun(String script, Boolean doPrompt = true, List<string> args = null)
         {
             consoleBox.Text = "";
             ProcessStartInfo consoleStartInfo = new ProcessStartInfo()
             {
                 FileName = script,
+                Arguments = (args == null) ? "" : String.Join(" ", args),
                 CreateNoWindow = true,
                 RedirectStandardOutput = true,
                 RedirectStandardInput = true,
@@ -160,7 +161,7 @@ namespace dev_toolbox
             console.Start();
 
             StreamReader readerStdOut = console.StandardOutput;
-            while (readerStdOut.EndOfStream == false)
+            while (!readerStdOut.EndOfStream)
             {
                 String output = readerStdOut.ReadLine();
                 consoleWrite(output);
@@ -281,6 +282,27 @@ namespace dev_toolbox
         private void restartTodo(object sender, EventArgs e)
         {
             restartRailsApp("script\\restart-todo.bat");
+        }
+
+        //// Rift Timer script buttons
+        private void updateVersion(object sender, EventArgs e)
+        {
+            UpdateDialog updateDialog = new UpdateDialog();
+
+            updateDialog.StartPosition = FormStartPosition.CenterParent;
+            updateDialog.ShowDialog();
+
+            if (updateDialog.DialogResult == DialogResult.OK)
+            {
+                List<string> args = new List<string>{updateDialog.updateResult};
+                consoleRun("script\\update-rift-timer-version.bat", true, args);
+                updateDialog.Dispose();
+            }
+            else
+            {
+                consoleWrite("\nRelease version update cancelled.", true);
+                updateDialog.Dispose();
+            }
         }
 
         //// Utility buttons

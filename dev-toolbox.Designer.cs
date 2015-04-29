@@ -49,12 +49,15 @@
             this.Button3 = new System.Windows.Forms.Button();
             this.Button4 = new System.Windows.Forms.Button();
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button14 = new System.Windows.Forms.Button();
             this.TabPage2.SuspendLayout();
             this.TabControl2.SuspendLayout();
             this.TabPage3.SuspendLayout();
             this.TabControl1.SuspendLayout();
             this.TabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).BeginInit();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // Button13
@@ -201,6 +204,7 @@
             // 
             this.TabControl1.Controls.Add(this.TabPage1);
             this.TabControl1.Controls.Add(this.TabPage2);
+            this.TabControl1.Controls.Add(this.tabPage4);
             this.TabControl1.Location = new System.Drawing.Point(3, 2);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
@@ -276,6 +280,27 @@
             this.PictureBox2.TabIndex = 14;
             this.PictureBox2.TabStop = false;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage4.Controls.Add(this.button14);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(315, 163);
+            this.tabPage4.TabIndex = 2;
+            this.tabPage4.Text = "Rift Timer";
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(8, 8);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(70, 70);
+            this.button14.TabIndex = 3;
+            this.button14.Text = "Update Latest Version";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.updateVersion);
+            // 
             // Toolbox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,6 +319,7 @@
             this.TabControl1.ResumeLayout(false);
             this.TabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox2)).EndInit();
+            this.tabPage4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -320,6 +346,8 @@
         internal System.Windows.Forms.Button Button3;
         internal System.Windows.Forms.Button Button4;
         internal System.Windows.Forms.PictureBox PictureBox2;
+        private System.Windows.Forms.TabPage tabPage4;
+        internal System.Windows.Forms.Button button14;
 
 
     }
