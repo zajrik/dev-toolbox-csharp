@@ -40,5 +40,11 @@ namespace dev_toolbox
                 MessageBox.Show("Update string not properly formatted.");
             }
         }
+
+        public void LabelChange(string label, string title = "Update Version")
+        {
+            label1.Text = label;
+            this.Text = title; 
+        }
     }
 }
