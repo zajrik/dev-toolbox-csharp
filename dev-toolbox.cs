@@ -305,6 +305,25 @@ namespace dev_toolbox
             }
         }
 
+        private void packageRelease(object sender, EventArgs e)
+        {
+            UpdateDialog releaseDialog = new UpdateDialog();
+
+            releaseDialog.StartPosition = FormStartPosition.CenterParent;
+            releaseDialog.ShowDialog();
+
+            if (releaseDialog.DialogResult == DialogResult.OK)
+            {
+                string[] releaseResultExplode = releaseDialog.updateResult.Split('.');
+                List<string> args = new List<string>();
+                for (int i = 0; i < releaseResultExplode.Length; i++)
+                {
+                    args.Add(releaseResultExplode[i]);
+                }
+                consoleRun("script\\create-rift-timer-release.bat", true, args);
+            }
+        }
+
         //// Utility buttons
         private void launchParse(object sender, EventArgs e)
         {

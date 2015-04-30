@@ -51,6 +51,7 @@
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.button14 = new System.Windows.Forms.Button();
+            this.button15 = new System.Windows.Forms.Button();
             this.TabPage2.SuspendLayout();
             this.TabControl2.SuspendLayout();
             this.TabPage3.SuspendLayout();
@@ -283,6 +284,7 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage4.Controls.Add(this.button15);
             this.tabPage4.Controls.Add(this.button14);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
@@ -300,6 +302,16 @@
             this.button14.Text = "Update Latest Version";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.updateVersion);
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(84, 8);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(70, 70);
+            this.button15.TabIndex = 4;
+            this.button15.Text = "Create Release Rar";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.packageRelease);
             // 
             // Toolbox
             // 
@@ -348,6 +360,7 @@
         internal System.Windows.Forms.PictureBox PictureBox2;
         private System.Windows.Forms.TabPage tabPage4;
         internal System.Windows.Forms.Button button14;
+        internal System.Windows.Forms.Button button15;
 
 
     }
