@@ -36,6 +36,10 @@ namespace dev_toolbox
             {
                 button1_Click(this, e);
             }
+            if (e.KeyCode == Keys.Escape)
+            {
+                DialogResult = DialogResult.Cancel;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
