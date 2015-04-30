@@ -310,6 +310,7 @@ namespace dev_toolbox
             UpdateDialog releaseDialog = new UpdateDialog();
 
             releaseDialog.StartPosition = FormStartPosition.CenterParent;
+            releaseDialog.LabelChange("Enter package version:", "Create package");
             releaseDialog.ShowDialog();
 
             if (releaseDialog.DialogResult == DialogResult.OK)
@@ -321,6 +322,11 @@ namespace dev_toolbox
                     args.Add(releaseResultExplode[i]);
                 }
                 consoleRun("script\\create-rift-timer-release.bat", true, args);
+            }
+            else
+            {
+                consoleWrite("\nUpdate package creation cancelled.", true);
+                releaseDialog.Dispose();
             }
         }
 
