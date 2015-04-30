@@ -30,7 +30,7 @@ namespace dev_toolbox
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(textBox1.Text, @"\d+\.\d+\.\d+"))
+            if (Regex.IsMatch(textBox1.Text, @"^\d+\.\d+\.\d+$"))
             {
                 updateResult = textBox1.Text;
                 DialogResult = DialogResult.OK;
