@@ -13,9 +13,12 @@ namespace dev_toolbox
 {
     public partial class UpdateDialog : Form
     {
-        public UpdateDialog()
+        public UpdateDialog(string label = "Enter new version:", string title = "Update Version")
         {
             InitializeComponent();
+
+            label1.Text = label;
+            this.Text = title;
         }
 
         public string updateResult;
@@ -39,12 +42,6 @@ namespace dev_toolbox
             {
                 MessageBox.Show("Update string not properly formatted.");
             }
-        }
-
-        public void LabelChange(string label, string title = "Update Version")
-        {
-            label1.Text = label;
-            this.Text = title; 
         }
     }
 }
