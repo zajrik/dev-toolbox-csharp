@@ -307,7 +307,11 @@ namespace dev_toolbox
 
         private void packageRelease(object sender, EventArgs e)
         {
-            UpdateDialog releaseDialog = new UpdateDialog("Enter package version:", "Create package");
+            UpdateDialog releaseDialog = new UpdateDialog
+                (
+                    "Enter package version:", 
+                    "Create package"
+                );
 
             releaseDialog.StartPosition = FormStartPosition.CenterParent;
             releaseDialog.ShowDialog();

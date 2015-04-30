@@ -13,15 +13,22 @@ namespace dev_toolbox
 {
     public partial class UpdateDialog : Form
     {
-        public UpdateDialog(string label = "Enter new version:", string title = "Update Version")
+        public UpdateDialog
+            (
+                string label = "Enter new version:",
+                string title = "Update Version",
+                string regex = @"^\d+\.\d+\.\d+$"
+            )
         {
             InitializeComponent();
 
             label1.Text = label;
             this.Text = title;
+            format = regex;
         }
 
         public string updateResult;
+        string format;
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -33,7 +40,7 @@ namespace dev_toolbox
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Regex.IsMatch(textBox1.Text, @"^\d+\.\d+\.\d+$"))
+            if (Regex.IsMatch(textBox1.Text, format))
             {
                 updateResult = textBox1.Text;
                 DialogResult = DialogResult.OK;
