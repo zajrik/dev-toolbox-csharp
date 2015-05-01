@@ -22,5 +22,29 @@ namespace dev_toolbox.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int posX {
+            get {
+                return ((int)(this["posX"]));
+            }
+            set {
+                this["posX"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int posY {
+            get {
+                return ((int)(this["posY"]));
+            }
+            set {
+                this["posY"] = value;
+            }
+        }
     }
 }

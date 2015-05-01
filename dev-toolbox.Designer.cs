@@ -50,8 +50,8 @@
             this.Button4 = new System.Windows.Forms.Button();
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.button14 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.TabPage2.SuspendLayout();
             this.TabControl2.SuspendLayout();
             this.TabPage3.SuspendLayout();
@@ -293,16 +293,6 @@
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Rift Timer";
             // 
-            // button14
-            // 
-            this.button14.Location = new System.Drawing.Point(8, 8);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(70, 70);
-            this.button14.TabIndex = 3;
-            this.button14.Text = "Update Latest Version";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.updateVersion);
-            // 
             // button15
             // 
             this.button15.Location = new System.Drawing.Point(84, 8);
@@ -312,6 +302,16 @@
             this.button15.Text = "Create Release Rar";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.packageRelease);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(8, 8);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(70, 70);
+            this.button14.TabIndex = 3;
+            this.button14.Text = "Update Latest Version";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.updateVersion);
             // 
             // Toolbox
             // 
@@ -324,6 +324,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Toolbox";
             this.Text = "zajrikDEV Toolbox";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Toolbox_FormClosed);
             this.Load += new System.EventHandler(this.Toolbox_Load);
             this.TabPage2.ResumeLayout(false);
             this.TabControl2.ResumeLayout(false);

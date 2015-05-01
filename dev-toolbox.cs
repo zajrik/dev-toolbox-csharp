@@ -26,7 +26,11 @@ namespace dev_toolbox
         }
 
         // Get personal variables/settings
-        static dynamic personal = JsonConvert.DeserializeObject(File.ReadAllText("script\\private.json"));
+        private static dynamic personal = JsonConvert.DeserializeObject
+            (File.ReadAllText("script\\private.json"));
+
+        private int posX = Properties.Settings.Default.posX;
+        private int posY = Properties.Settings.Default.posY;
 
         // Splash message, written to console on init. Available via 'splash' command as well
         static String versionNumber = Application.ProductVersion;
@@ -43,6 +47,9 @@ namespace dev_toolbox
             consoleBox.DetectUrls = false;
             consoleWrite(consoleSplash);
             cmdPrompt();
+
+            Point startPos = new Point(posX, posY);
+            this.Location = startPos;
         }
 
         // Focus console on hover to allow mouse-wheel scrolling without clicking console first
@@ -401,5 +408,13 @@ namespace dev_toolbox
             }
         }
         //// End protected scripts
+
+        // Execute on exit
+        private void Toolbox_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Properties.Settings.Default.posX = this.Location.X;
+            Properties.Settings.Default.posY = this.Location.Y;
+            Properties.Settings.Default.Save();
+        }
     }
 }
