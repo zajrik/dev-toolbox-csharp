@@ -50,6 +50,8 @@
             this.Button4 = new System.Windows.Forms.Button();
             this.PictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.button17 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.TabPage2.SuspendLayout();
@@ -284,6 +286,8 @@
             // tabPage4
             // 
             this.tabPage4.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage4.Controls.Add(this.button17);
+            this.tabPage4.Controls.Add(this.button16);
             this.tabPage4.Controls.Add(this.button15);
             this.tabPage4.Controls.Add(this.button14);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
@@ -292,6 +296,26 @@
             this.tabPage4.Size = new System.Drawing.Size(315, 163);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Rift Timer";
+            // 
+            // button17
+            // 
+            this.button17.Location = new System.Drawing.Point(236, 8);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(70, 70);
+            this.button17.TabIndex = 6;
+            this.button17.Text = "Create Metro Release Rar";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.metroPackageRelease);
+            // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(160, 8);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(70, 70);
+            this.button16.TabIndex = 5;
+            this.button16.Text = "Update Latest Metro Version";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.updateMetroVersion);
             // 
             // button15
             // 
@@ -362,6 +386,8 @@
         private System.Windows.Forms.TabPage tabPage4;
         internal System.Windows.Forms.Button button14;
         internal System.Windows.Forms.Button button15;
+        internal System.Windows.Forms.Button button17;
+        internal System.Windows.Forms.Button button16;
 
 
     }

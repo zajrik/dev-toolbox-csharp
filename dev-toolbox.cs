@@ -340,6 +340,54 @@ namespace dev_toolbox
             }
         }
 
+        private void updateMetroVersion(object sender, EventArgs e)
+        {
+            UpdateDialog updateDialog = new UpdateDialog();
+
+            updateDialog.StartPosition = FormStartPosition.CenterParent;
+            updateDialog.ShowDialog();
+
+            if (updateDialog.DialogResult == DialogResult.OK)
+            {
+                List<string> args = new List<string> { updateDialog.updateResult };
+                consoleRun("script\\update-rift-timer-metro-version.bat", true, args);
+                updateDialog.Dispose();
+            }
+            else
+            {
+                consoleWrite("\nRelease version update cancelled. (metro)", true);
+                updateDialog.Dispose();
+            }
+        }
+
+        private void metroPackageRelease(object sender, EventArgs e)
+        {
+            UpdateDialog releaseDialog = new UpdateDialog
+                (
+                    "Enter package version:",
+                    "Create package (metro)"
+                );
+
+            releaseDialog.StartPosition = FormStartPosition.CenterParent;
+            releaseDialog.ShowDialog();
+
+            if (releaseDialog.DialogResult == DialogResult.OK)
+            {
+                string[] releaseResultExplode = releaseDialog.updateResult.Split('.');
+                List<string> args = new List<string>();
+                for (int i = 0; i < releaseResultExplode.Length; i++)
+                {
+                    args.Add(releaseResultExplode[i]);
+                }
+                consoleRun("script\\create-rift-timer-metro-release.bat", true, args);
+            }
+            else
+            {
+                consoleWrite("\nUpdate package creation cancelled. (metro)", true);
+                releaseDialog.Dispose();
+            }
+        }
+
         //// Utility buttons
         private void launchParse(object sender, EventArgs e)
         {
